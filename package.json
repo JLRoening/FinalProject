@@ -1,0 +1,25 @@
+{
+  "name": "finalproject",
+  "version": "1.0.0",
+  "description": "Final project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JLRoening/FinalProject.git"
+  },
+  "author": "John Roening",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JLRoening/FinalProject/issues"
+  },
+  "homepage": "https://github.com/JLRoening/FinalProject#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  }
+}
