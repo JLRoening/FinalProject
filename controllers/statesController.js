@@ -73,14 +73,14 @@ const getAdmission = async (req, res) => {
   });
 };
 
-const findState = async (code) => states.find(st => st.code === code);
+const findState = async (code) => statesData.find(st => st.code === code);
 
 const findStatesByContiguity = async (isContiguous) => {
   let result;
   if (isContiguous === "true") {
-    result = states.filter((st) => st.code !== "AK" && st.code !== "HI");
+    result = statesData.filter((st) => st.code !== "AK" && st.code !== "HI");
   } else {
-    result = states.filter((st) => st.code === "AK" || st.code === "HI");
+    result = statesData.filter((st) => st.code === "AK" || st.code === "HI");
   }
   return result;
 };
