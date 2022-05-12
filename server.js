@@ -3,16 +3,15 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require('cors');
+const corsOptions = require("./config/corsOptions");
 const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn');
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
-
 //connect to MongoDB
 connectDB();
 
-app.options("/complex-cors", cors());
+app.use(cors(corsOptions));
 
 //handles form data (urlencoded data)
 app.use(express.urlencoded({ extended: false}));
