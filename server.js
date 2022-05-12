@@ -7,19 +7,12 @@ const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn');
 const PORT = process.env.PORT || 3000;
 
+app.use(cors());
+
 //connect to MongoDB
 connectDB();
 
-app.use(cors({
-    origin: (origin, callback) => {
-        callback(null, true);
-    },
-    optionsSuccessStatus: 200
-}));
-
-app.get('/products/:id', function (req, res, next) {
-    res.json({msg: 'This is CORS-enabled for all origins!'})
-  })
+app.options("/complex-cors", cors());
 
 //handles form data (urlencoded data)
 app.use(express.urlencoded({ extended: false}));
